@@ -148,4 +148,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for collectstat
 
 # Only for production
 if not DEBUG:
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+    # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
