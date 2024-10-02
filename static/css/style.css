@@ -1,0 +1,209 @@
+/* personal/static/css/style.css */
+
+/* General styles for body, font, etc. */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #121212; /* Dark background color */
+    background-image: radial-gradient(circle, #444444 1px, transparent 1px); /* Dot pattern */
+    background-size: 40px 40px; /* Size of the dots */
+    color: #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    position: relative; /* Needed for background positioning */
+    animation: backgroundAnimation 2s linear infinite; /* Background animation */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0 0; /* Start position */
+    }
+    100% {
+        background-position: 0 40px; /* Move background down */
+    }
+}
+
+.navbar {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 0.5rem 1rem; /* Adjusted padding for a slimmer appearance */
+    color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Bring navbar above the background */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+}
+
+.contact-label {
+    background-color: #BB86FC; /* Background color for the label */
+    color: #FFFFFF; /* Text color */
+    padding: 0.5rem 1rem; /* Padding for the label */
+    border-radius: 50px; /* Rounded corners for the pill shape */
+    margin-right: 10px; /* Space between the label and icons */
+    font-weight: bold; /* Make the text bold */
+    font-size: 0.9rem; /* Font size */
+}
+.skills-icons {
+    display: flex;
+    justify-content: center; /* Center align the icons */
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    margin: 20px 0; /* Add some margin above and below */
+}
+
+.skill-icon {
+    width: 50px; /* Set a consistent width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add space between icons */
+    transition: transform 0.2s; /* Add a hover effect */
+}
+
+.skill-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.icon-button {
+    display: inline-block;
+    margin: 0 10px; /* Space between icons */
+}
+
+.icon-button img {
+    width: 30px; /* Set the icon size to 20px */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Animation effect */
+}
+
+.icon-button:hover img {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Portfolio styles */
+.portfolio-header {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.portfolio-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.portfolio-header h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #BB86FC;
+}
+
+.portfolio-header p {
+    font-size: 1rem;
+    color: #B3B3B3;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 600px;
+}
+
+.portfolio-card:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #333;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-info {
+    padding: 1.5rem;
+}
+
+.card-info h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+.card-info p {
+    font-size: 1rem;
+    color: #B3B3B3;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #BB86FC;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #9b6afc;
+}
+
+.footer {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 1rem;
+    text-align: center;
+    color: #BBBBBB;
+    margin-top: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 0 1rem;
+    }
+
+    .card-info h2 {
+        font-size: 1.25rem;
+    }
+
+    .card-info p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .icon-button img {
+        width: 15px; /* Adjust for smaller icons on mobile if needed */
+    }
+}

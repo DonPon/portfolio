@@ -1,0 +1,49 @@
+<!-- personal/templates/personal/portfolio.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+<header class="portfolio-header">
+    <h1>Franz Eckermann</h1>
+    <h2>Full-stack Developer / Software Engineer</h2>
+    <p>
+        Passionate full stack developer with expertise in Python, dedicated to building efficient and scalable web applications.
+        Experienced in web app development, Robotic Process Automation (RPA), and web scraping.
+        I excel at automating workflows and enhancing productivity.
+    </p>
+    <br><br><br>
+    <h2>Skills</h2>
+{% load static %}
+<div class="skills-icons">
+    <img src="{% static 'icons/python.svg' %}" alt="Python" title="Python" class="skill-icon">
+    <img src="{% static 'icons/postgres.svg' %}" alt="Postgres" title="Postgres" class="skill-icon">
+    <img src="{% static 'icons/javascript.svg' %}" alt="JavaScript" title="JavaScript" class="skill-icon">
+    <img src="{% static 'icons/django.svg' %}" alt="Django" title="Django" class="skill-icon">
+    <img src="{% static 'icons/selenium.svg' %}" alt="Selenium" title="Selenium" class="skill-icon">
+    <img src="{% static 'icons/git.svg' %}" alt="Selenium" title="Git" class="skill-icon">
+
+</div>
+    <br><br><br>
+    <h2>Projects</h2>
+</header>
+
+<div class="portfolio-container">
+    {% for item in items %}
+        <div class="portfolio-card">
+            <div class="card-content">
+                <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-image">
+                <div class="card-info">
+                    <h2>{{ item.title }}</h2>
+                    <p>{{ item.description }}</p>
+                    {% if item.url %}
+                        <a href="{{ item.url }}" class="btn">View Project</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

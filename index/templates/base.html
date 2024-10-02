@@ -1,0 +1,38 @@
+<!-- personal/templates/personal/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar">
+         <span class="contact-label">Contact</span> <!-- Added contact label -->
+        <a href="https://github.com/DonPon" target="_blank" class="icon-button" title="GitHub">
+            <img src="{% static 'icons/github.svg' %}" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/franz-eck/" target="_blank" class="icon-button" title="LinkedIn">
+            <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn" />
+        </a>
+        <a href="mailto:franzeckermann@gmail.com" class="icon-button" title="Email">
+            <img src="{% static 'icons/email.svg' %}" alt="Email" />
+        </a>
+
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+</body>
+</html>
