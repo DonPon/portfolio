@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+{% load static %}
+<header class="contact-header">
+    <h1>Contact Me</h1>
+    <p>If you have any questions or would like to get in touch, feel free to send me a message using the form below.</p>
+</header>
+
+<div class="contact-form-container">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" class="contact-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            {{ form.subject.label_tag }}
+            {{ form.subject }}
+        </div>
+        <div class="form-group">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
+{% endblock %}
