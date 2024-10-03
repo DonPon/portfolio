@@ -39,5 +39,5 @@ class Visitor(models.Model):
         verbose_name_plural = "Website visits"
 
     def __str__(self):
-        return f"IP: {self.ip_address} at {self.visit_time}"
+        return f"IP: {self.ip_address} ({self.region}) at {self.visit_time}"
 
