@@ -37,14 +37,24 @@ body {
     align-items: center; /* Center items vertically */
 }
 
-.contact-label {
-    background-color: #BB86FC; /* Background color for the label */
+button.contact-label {
+    background-color: #BB86FC; /* Background color for the button */
     color: #FFFFFF; /* Text color */
-    padding: 0.5rem 1rem; /* Padding for the label */
+    padding: 0.5rem 1rem; /* Padding for the button */
     border-radius: 50px; /* Rounded corners for the pill shape */
-    margin-right: 10px; /* Space between the label and icons */
+    margin-right: 10px; /* Space between the button and icons */
     font-weight: bold; /* Make the text bold */
     font-size: 0.9rem; /* Font size */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change the cursor to pointer for button interaction */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect */
+button.contact-label:hover {
+    background-color: #9C70F2; /* Slightly darker shade of the original color */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 .skills-icons {
     display: flex;
