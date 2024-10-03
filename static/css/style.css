@@ -191,7 +191,108 @@ button.contact-label:hover {
     padding: 1rem;
     text-align: center;
     color: #BBBBBB;
-    margin-top: auto;
+    margin-top: 2rem; /* Adds space between the footer and the content above */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for some visual lift */
+}
+
+/* Contact Form styles */
+.contact-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #BB86FC; /* Light purple to match the theme */
+    margin-bottom: 1.5rem;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #B3B3B3; /* Subtle text color */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #1E1E1E; /* Dark background for the form */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow effect */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #BB86FC; /* Use theme color for labels */
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #121212; /* Match the dark background */
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #E0E0E0; /* Light text on dark background */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #BB86FC; /* Focus effect with theme color */
+    outline: none; /* Remove default outline */
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #BB86FC; /* Use the theme color */
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #9B6AFC;
+    transform: scale(1.05);
+}
+
+/* Style for success and error messages */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.messages li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.messages .success {
+    background-color: #1D3B1F; /* Dark green for success */
+    color: #BBE29A; /* Light green text */
+}
+
+.messages .error {
+    background-color: #5B1E1E; /* Dark red for errors */
+    color: #F28B82; /* Light red text */
 }
 
 /* Mobile responsiveness */
@@ -215,5 +316,25 @@ button.contact-label:hover {
 
     .icon-button img {
         width: 15px; /* Adjust for smaller icons on mobile if needed */
+    }
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+
+    .contact-header p {
+        font-size: 1rem;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
     }
 }
