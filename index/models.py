@@ -28,6 +28,10 @@ class Contact(models.Model):
 class Visitor(models.Model):
     ip_address = models.GenericIPAddressField()
     user_agent = models.TextField()
+    city = models.CharField(max_length=100, null=True, blank=True)
+    region = models.CharField(max_length=100, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True)
+    user_agent = models.TextField()
     visit_time = models.DateTimeField(auto_now_add=True)
 
     class Meta:

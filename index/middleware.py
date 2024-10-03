@@ -1,3 +1,4 @@
+import requests
 from datetime import timedelta
 from django.utils import timezone
 from .models import Visitor
@@ -20,8 +21,25 @@ class LogVisitorMiddleware(MiddlewareMixin):
         existing_visitor = Visitor.objects.filter(ip_address=ip, visit_time__gte=last_hour).exists()
 
         if not existing_visitor:
+            # Fetch geolocation data
+            geo_response = requests.get(f'http://ip-api.com/json/{ip}')
+            geo_data = geo_response.json()
+
+            # Only proceed if the request was successful and valid
+            if geo_response.status_code == 200 and geo_data.get('status') == 'success':
+                city = geo_data.get('city')
+                region = geo_data.get('regionName')
+                country = geo_data.get('country')
+
+            else:
+                city = region = country = None
+                latitude = longitude = None
+
             # Save the visitor information to the database
             Visitor.objects.create(
                 ip_address=ip,
-                user_agent=user_agent
+                user_agent=user_agent,
+                city=city,
+                region=region,
+                country=country,
             )
